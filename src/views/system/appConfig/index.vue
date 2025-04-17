@@ -27,20 +27,19 @@
       </el-button>
     </div>
     <div class="readFileContent">
-      <framework/>
-      <!-- <framework v-if="$router.currentRoute.name=='initConfig'"/>
-      <univerView v-else/> -->
+      <framework v-if="$router.currentRoute.name=='initConfig'" />
+      <univerView v-else/>
     </div>
   </div>
 </template>
 <script>
 import framework from './framework.vue';
-// import univerView from './univerView.vue';
+import univerView from './univerView.vue';
 export default {
   name: "AppMain",
   components: {
     framework,
-    // univerView
+    univerView
   },
   mounted() {
   }
