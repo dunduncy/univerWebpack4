@@ -1,0 +1,14 @@
+$font-size:18px;
+$color:#95CBFF;
+
+$font-size-w:24px;
+$color-w:#FFFFFF;
+
+$font-size-title:22px;
+
+:export {
+  fontSize: $font-size;
+  fontColor:$color;
+  fontSizeW: $font-size-w;
+  fontColorW:$color-w
+}

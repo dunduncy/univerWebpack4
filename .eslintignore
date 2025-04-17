@@ -1,0 +1,6 @@
+build/*.js
+src
+public
+dist
+plopfile.js
+vue.config.js

@@ -1,0 +1,10 @@
+.summary {
+  line-height: 23px;
+  color: #fff; 
+  width: 98%;
+  /* background-image: -webkit-gradient(linear, left 0, right 0, from(#13e19c), to(#35cbf8)); */
+  /* -webkit-background-clip: text;  */
+  /* -webkit-text-fill-color: transparent;  */
+  font-size: 12pt;
+  margin:0;
+}

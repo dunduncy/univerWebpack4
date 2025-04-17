@@ -1,0 +1,103 @@
+@font-face {
+	font-family: 'alibabapuhui';
+	src: url('~@/assets/fonts/AlibabaPuHuiTi-3-55-Regular.ttf');
+}
+::v-deep.el-table .el-table__row .cell{
+  word-break: break-word;
+}
+// el-table去除边框横线
+::v-deep.el-table th.is-leaf, ::v-deep.el-table td {
+  border-bottom: 0px;
+}
+// el-table修改斑马纹颜色
+::v-deep.el-table--striped .el-table__body tr.el-table__row--striped td {
+  background: #F7F7F7;
+}
+// el-table修改thead背景颜色
+::v-deep.el-table th {
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #F7F7F7;
+  //font-family: Microsoft YaHei, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Arial, sans-serif;
+  font-family:alibabapuhui;
+}
+::v-deep.el-table--enable-row-hover .el-table__body tr:hover > td {
+  background-color: #EEF6FD;
+}
+// el-table修改表格底部的灰线
+::v-deep.el-table::before {
+    height: 0px;
+}
+
+.el-form .el-select{
+  width: 100%;
+}
+.el-form-item__content .el-date-editor{
+  width:100%;
+}
+::v-deep.el-form-item__content .el-date-editor.el-input, ::v-deep.el-form-item__content .el-date-editor.el-input__inner {
+    width: 100%;
+}
+.el-form-item .el-cascader {
+  width: 100%;
+}
+.operateA{
+  color: #3B74D7;
+  font-size: 14px;
+  margin-right:10px;
+}
+.operateA.danger{
+  color: #F97676;
+}
+
+
+
+
+
+
+
+// --------------------隐藏table gutter列和内容区右侧的空白 start
+
+::v-deep .el-table--border th.gutter:last-of-type {
+  background-color:#F2F2F2;
+}
+::v-deep .el-table colgroup col[name='gutter']{
+  background-color:#F2F2F2;
+  width: 5px;
+  border:1px solid red;
+}
+
+::v-deep .el-table__body{
+  width: 100% !important;
+}
+::v-deep .el-table__body-wrapper {
+            /* 整个滚动条 */
+  &::-webkit-scrollbar {
+    /* 对应纵向滚动条的宽度 */
+    width: 5px;
+    /* 对应横向滚动条的宽度 */
+    height: 5px;
+  }
+
+  /* 滚动条上的滚动滑块 */
+  &::-webkit-scrollbar-thumb {
+    background-color: #DBDBDB;
+    border-radius: 32px;
+  }
+
+  /* 滚动条轨道 */
+  &::-webkit-scrollbar-track {
+    width: 5px;
+    /* 对应横向滚动条的宽度 */
+  }
+}
+::v-deep .el-table__fixed-right{
+  bottom: 5px !important;
+  right: 5px !important;
+}
+::v-deep .el-table__fixed-right-patch{
+  width:5px !important;
+}
