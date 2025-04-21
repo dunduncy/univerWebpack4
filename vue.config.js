@@ -9,7 +9,8 @@ function resolve(dir) {
 const name = defaultSettings.title || "vue Element Admin"; // page title
 
 const port = process.env.port || process.env.npm_config_port || 9527; // dev port
-
+const univerCoreDir = require.resolve('@univerjs/core').substring(0, require.resolve('@univerjs/core').lastIndexOf('/'));
+const univerPresetDir = require.resolve('@univerjs/presets').substring(0, require.resolve('@univerjs/presets').lastIndexOf('/'));
 
 module.exports = {
   // 部署生产环境和开发环境下的URL。
@@ -61,7 +62,10 @@ module.exports = {
     name: name,
     resolve: {
       alias: {
-        "@": resolve("src")
+        "@": resolve("src"),
+        // '@univerjs/core/facade':resolve(univerCoreDir, 'facade.js'),
+        // '@univerjs/presets/preset-sheets-core':resolve(univerPresetDir, 'preset-sheets-core/index.js'),
+        "@univerjs/presets":univerPresetDir,
       }
     },
     module: {
@@ -72,11 +76,16 @@ module.exports = {
           type: "javascript/auto"
         },
       ]
-    }
+    },
   },
   chainWebpack(config) {
     // it can improve the speed of the first screen, it is recommended to turn on preload
     // it can improve the speed of the first screen, it is recommended to turn on preload
+
+    config.resolve.alias
+    .set('@univerjs/core/facade', path.resolve(univerCoreDir, 'facade.js'))
+    .set('@univerjs/presets/preset-sheets-core', path.resolve(univerPresetDir, 'preset-sheets-core/lib/index.js'))
+    .set('@univerjs/presets', path.resolve(univerPresetDir, 'preset-sheets-core/index.js'))
     config.plugin("preload").tap(() => [
       {
         rel: "preload",

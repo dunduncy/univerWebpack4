@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@amap/amap-jsapi-loader": "^1.0.1",
-    "@univerjs/presets": "^0.6.9",
+    "@univerjs/presets": "^0.6.10",
     "@wangeditor/editor": "^5.1.18",
     "@wangeditor/editor-for-vue": "^1.0.2",
     "af-table-column": "^1.0.3",
